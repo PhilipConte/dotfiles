@@ -1,9 +1,19 @@
 ; https://github.com/jaagr/polybar
 
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+; vim:ft=dosini
+
+[settings]
+screenchange-reload = true
+format-padding = 1
+format-background = ${colors.module}
+
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #1d1f21
-background-alt = #444
+background-alt = #707880
 ;foreground = ${xrdb:color7:#222}
 foreground = #ffffff
 foreground-alt = #555
@@ -20,8 +30,6 @@ module = #373b41
 [bar/master]
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
 fixed-center = true
 
 background = ${colors.background}
@@ -30,7 +38,6 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-;border-size = 4
 border-color = #00000000
 
 padding-left = 0
@@ -57,11 +64,10 @@ inherit = bar/master
 
 modules-left = i3
 modules-center = time
-modules-right = pulseaudio player-mpris-simple memory cpu wlan battery temperature date
+modules-right = pulseaudio player-mpris-simple memory cpu wlan battery0 battery1 date
 
 tray-position = right
 ;tray-padding = 2
-;tray-transparent = true
 ;tray-background = ${colors.module}
 
 ;wm-restack = i3
@@ -74,7 +80,11 @@ tray-position = right
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-separator = "|"
+border-top-size = 4
+border-bottom-size = 4
+border-color = ${colors.background}
+
+;separator = "|"
 
 
 
@@ -86,6 +96,7 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+format-background = ${colors.background}
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
@@ -95,8 +106,8 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -106,7 +117,6 @@ label-unfocused-padding = 2
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -165,7 +175,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "CPU: "
 label = %percentage:2%%
 
 
@@ -175,7 +185,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = ""
+format-prefix = "RAM: "
 label = %percentage_used%%
 
 
@@ -226,7 +236,7 @@ format-disconnected =
 type = internal/date
 interval = 1.0
 date =  %{F-}%I:%M %p
-
+format-background = ${colors.background}
 
 
 
@@ -235,7 +245,6 @@ date =  %{F-}%I:%M %p
 type = internal/date
 date = %A %B %e
 label = %date%
-;label-foreground = #d0633d
 
 ;type = custom/script
 ;exec = date +"%e %B - %A"
@@ -261,37 +270,26 @@ ramp-volume-2 = 
 
 
 
-[module/battery]
+[module/battery0]
 type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-framerate = 750
+label-charging = BAT0: ↑ %percentage%%
+label-discharging = BAT0: ↓ %percentage%%
+label-full = BAT0: charged
 
 
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+full-at = 98
 
+label-charging = BAT1: ↑ %percentage%%
+label-discharging = BAT1: ↓ %percentage%%
+label-full = BAT1: charged
 
 
 [module/temperature]
@@ -310,25 +308,3 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 
-
-
-
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-format-padding = 2
-;format-background = ${colors.module}
-
-
-
-
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
-; vim:ft=dosini
