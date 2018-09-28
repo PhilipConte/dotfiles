@@ -21,7 +21,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-module = #373b41
+module = #a54242
 
 
 
@@ -43,8 +43,8 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = Droid Sans:size=12;3
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
