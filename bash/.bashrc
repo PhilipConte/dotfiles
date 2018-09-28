@@ -21,6 +21,8 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
+PATH=~/bin:$PATH
+
 umask 077
 
 alias la='ls -a'
