@@ -1,14 +1,14 @@
 ; https://github.com/jaagr/polybar
+; vim:ft=dosini
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-; vim:ft=dosini
 
 [settings]
 screenchange-reload = true
 format-padding = 1
-format-background = ${colors.module}
+format-underline = ${colors.module}
 
 [colors]
 ;background = ${xrdb:color0:#222}
@@ -20,8 +20,7 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
-
-module = #a54242
+module = #009ddc
 
 
 
@@ -46,6 +45,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
+intrvl = 5
+
 font-0 = Droid Sans:size=12;3
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
@@ -64,7 +65,7 @@ inherit = bar/master
 
 modules-left = i3
 modules-center = time
-modules-right = pulseaudio player-mpris-simple memory cpu wlan battery0 battery1 date
+modules-right = pulseaudio player-mpris-simple wlan battery0 battery1 date
 
 tray-position = right
 ;tray-padding = 2
@@ -80,9 +81,9 @@ tray-position = right
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-border-top-size = 4
-border-bottom-size = 4
-border-color = ${colors.background}
+;border-top-size = 4
+;border-bottom-size = 4
+;border-color = ${colors.background}
 
 ;separator = "|"
 
@@ -96,7 +97,9 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+
 format-background = ${colors.background}
+format-underline = ${colors.background}
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
@@ -134,7 +137,7 @@ label-urgent-padding = 2
 [module/player-mpris-simple]
 type = custom/script
 exec = ~/.config/polybar/player-mpris-simple.sh 2> /dev/null
-interval = 3
+interval = ${bar/master.intrvl}
 click-left = playerctl previous
 click-right = playerctl next
 click-middle = playerctl play-pause
@@ -174,7 +177,7 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = ${bar/master.intrvl}
 format-prefix = "CPU: "
 label = %percentage:2%%
 
@@ -184,7 +187,7 @@ label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = ${bar/master.intrvl}
 format-prefix = "RAM: "
 label = %percentage_used%%
 
@@ -195,7 +198,7 @@ label = %percentage_used%%
 [module/wlan]
 type = internal/network
 interface = wlp4s0
-interval = 3.0
+interval = ${bar/master.intrvl}
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
@@ -218,7 +221,7 @@ ramp-signal-4 = 
 [module/eth]
 type = internal/network
 interface = enp4s0
-interval = 3.0
+interval = ${bar/master.intrvl}
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -234,10 +237,10 @@ format-disconnected =
 
 [module/time]
 type = internal/date
-interval = 1.0
+interval = ${bar/master.intrvl}
 date =  %{F-}%I:%M %p
 format-background = ${colors.background}
-
+format-underline = ${colors.background}
 
 
 
@@ -248,7 +251,7 @@ label = %date%
 
 ;type = custom/script
 ;exec = date +"%e %B - %A"
-;interval = 5
+;interval = ${bar/master.intrvl}
 ;format-prefix = " "
 ;format-prefix-foreground = #d0633d
 
