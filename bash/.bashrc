@@ -34,4 +34,5 @@ alias nano='vim'
 alias paci='sudo pacman -Syu'
 alias owndir='sudo chown -R $USER:$USER'
 alias dc='docker-compose'
+alias toclipboard='xclip -sel c < '
 
