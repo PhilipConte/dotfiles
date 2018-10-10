@@ -32,4 +32,6 @@ alias aurinstall='makepkg -si'
 alias vim='nvim'
 alias nano='vim'
 alias paci='sudo pacman -Syu'
+alias owndir='sudo chown -R $USER:$USER'
+alias dc='docker-compose'
 
