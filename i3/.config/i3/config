@@ -148,7 +148,7 @@ bindsym $mod+r mode "resize"
 for_window [class="^.*"] border pixel 0
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
-exec --no-startud-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startud-id $(find /usr -name "polkit-gnome-authentication-agent-1" 2>/dev/null) &
 exec --no-startup-id compton -CGb --backend glx --vsync opengl
 exec --no-startup-id redshift-gtk &> /dev/null &
 exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/unixporn
