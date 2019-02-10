@@ -162,6 +162,9 @@ bindsym $mod+c exec google-chrome-stable
 
 bindsym $mod+l exec i3lock -o --nofork --f
 
+# brightness control
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 
 gaps inner 10
 gaps outer 4
