@@ -65,7 +65,7 @@ inherit = bar/master
 
 modules-left = i3
 modules-center = time
-modules-right = pulseaudio player-mpris-simple wlan battery0 battery1 date
+modules-right = alsa player-mpris-simple wlan battery0 battery1 date
 
 tray-position = right
 ;tray-padding = 2
@@ -256,23 +256,6 @@ label = %date%
 ;format-prefix-foreground = #d0633d
 
 
-
-
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-
-
-
-
-
 [module/battery0]
 type = internal/battery
 battery = BAT0
@@ -295,19 +278,13 @@ label-discharging = BAT1: ↓ %percentage%%
 label-full = BAT1: charged
 
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+[module/alsa]
+type = internal/alsa
 
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
 
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
