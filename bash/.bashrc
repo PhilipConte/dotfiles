@@ -21,7 +21,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-PATH=~/bin:$PATH
+PATH=~/.cargo/bin:~/bin:$PATH
 
 umask 077
 
