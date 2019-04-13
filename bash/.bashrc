@@ -13,7 +13,6 @@ if [ "$TERM" = "linux" ]; then
     clear
 fi
 
-alias ls='ls --color=auto'
 PS1='\u@\h \W \$ '
 
 
@@ -21,10 +20,9 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-PATH=~/.cargo/bin:~/bin:$PATH
-
 umask 077
 
+alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -al'
 alias hg='history | grep'
