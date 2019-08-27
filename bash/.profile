@@ -1,4 +1,3 @@
-PATH=~/.cargo/bin:~/bin:$PATH
-
-umask 077
+[[ $PRIVATERC_RUN != yes && -f ~/.privaterc ]] && source ~/.privaterc
+source ~/.bashrc
 

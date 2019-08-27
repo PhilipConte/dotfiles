@@ -1,0 +1,4 @@
+export PRIVATERC_RUN=yes
+
+PATH=~/.cargo/bin:~/bin:$PATH
+
