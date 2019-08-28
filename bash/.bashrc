@@ -4,8 +4,8 @@
 [[ $- != *i* ]] && return
 
 PS1='\u@\h \W \$ '
-EDITOR='vim'
-VISUAL='vim'
+export EDITOR='vim'
+export VISUAL='vim'
 
 alias ls='ls --color=auto'
 alias la='ls -a'
