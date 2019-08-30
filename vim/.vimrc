@@ -10,7 +10,7 @@
 "     \__\::::/      \__\/      \  \:\    
 "         ~~~~                   \__\/    
 
- " Set compatibility to Vim only.
+" Set compatibility to Vim only.
 set nocompatible
 
 "Always show current position
@@ -20,7 +20,7 @@ set ruler
 syntax on
 
 " Turn off modelines
-set modelines=0
+"set modelines=0
 
 " Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
 " set textwidth=80
@@ -56,10 +56,6 @@ set cmdheight=1
 " Highlight matching pairs of brackets. Use the '%' character to jump between them.
 set matchpairs+=<:>
 
-" Display different types of white spaces.
-"set list
-"set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
-
 " Show line numbers
 set number
 highlight LineNr ctermfg=NONE
@@ -67,14 +63,16 @@ highlight LineNr ctermfg=NONE
 " Set status line display
 set laststatus=2
 hi StatusLine ctermfg=black ctermbg=NONE cterm=NONE
-hi StatusLineNC ctermfg=black ctermbg=black cterm=NONE
-hi User1 ctermfg=NONE ctermbg=red
+"hi StatusLineNC ctermfg=black ctermbg=black cterm=NONE
+hi User1 ctermfg=black ctermbg=red
 hi User2 ctermfg=black ctermbg=blue
 set statusline=%=%1* 		" Switch to right-side
 set statusline+=\ \ 		" Padding
 set statusline+=%f 			" Path to the file (short)
 set statusline+=\ %2*\ 		" Padding & switch colour
 set statusline+=%l 		    " Current line
+set statusline+=:           " : text
+set statusline+=%c          " line position
 set statusline+=\  		    " Padding
 set statusline+=of		    " of text
 set statusline+=\  		    " Padding
