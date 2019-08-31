@@ -28,7 +28,7 @@ $balt+l exec light-locker-command -l
 
 bindsym XF86AudioRaiseVolume $exe pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume $exe pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute $exe pactl set-sink-mute @DEFAULT_SINK@ toggle && pkil -RTMIN+1 i3blocks
+bindsym XF86AudioMute $exe pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+1 i3blocks
 
 bindsym XF86MonBrightnessUp $exe light -A 10
 bindsym XF86MonBrightnessDown $exe light -U 10
