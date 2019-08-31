@@ -146,7 +146,7 @@ $bmod+Shift+0 move container to workspace $ws10
 font pango:SFMono,FontAwesome5Free Solid 10
 #font pango:Font Awesome 5 Free Solid 12
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 gaps inner 10
 gaps outer 4
@@ -165,6 +165,15 @@ set $bg         #161616
 set $fg         #fdf6e3
 set $alert      #bd2c40
 set $focus      #ffb52a
+set $winbg      #000000
+set $nofocus    #c5c8c6
+
+# Window Borders
+# class                 border      backgr. text    indicator   child_border
+client.focused          $focus      $winbg  $fg     $alert      $focus
+client.focused_inactive $nofocus    $winbg  $bg     $nofocus    $nofocus
+client.unfocused        $nofocus    $winbg  $bg     $nofocus    $nofocus
+client.urgent           $alert      $winbg  $bg     $alert      $alert
 
 bar {
         position        top
@@ -175,7 +184,7 @@ bar {
                 background $bg
                 statusline $fg
 
-                # Color for workspace indicators
+                # Workspace Indicators
                 # Name                  Border  Background Text
                 focused_workspace       $bg     $bg        $focus
                 active_workspace        $focus  $bg        $fg
