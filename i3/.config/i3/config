@@ -180,6 +180,9 @@ bar {
         status_command  i3blocks
         tray_output     primary
 
+        wheel_up_cmd nop
+        wheel_down_cmd nop
+
         colors {
                 background $bg
                 statusline $fg
