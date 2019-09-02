@@ -3,6 +3,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+cat ~/.cache/wal/sequences
+
 PS1='\u@\h \W \$ '
 export EDITOR='vim'
 export VISUAL='vim'

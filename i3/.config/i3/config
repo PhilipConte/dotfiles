@@ -142,11 +142,10 @@ $bmod+Shift+0 move container to workspace $ws10
 # -----------------------look and feel------------------------
 # ------------------------------------------------------------
 
-#font pango:SFMono 12
 font pango:SFMono,FontAwesome5Free Solid 10
-#font pango:Font Awesome 5 Free Solid 12
 
 for_window [class="^.*"] border pixel 1
+hide_edge_borders smart
 
 gaps inner 10
 gaps outer 4
@@ -161,24 +160,21 @@ mode "$mode_gaps" {
     bindsym Escape mode "default"
 }
 
-set $bg         #161616
-set $fg         #fdf6e3
-set $alert      #bd2c40
-set $focus      #ffb52a
-set $winbg      #000000
-set $nofocus    #c5c8c6
+set_from_resource   $bg     i3wm.background #161616
+set_from_resource   $fg     i3wm.color14  #fdf6e3
+set_from_resource   $alert  i3wm.color3     #bd2c40
 
 # Window Borders
 # class                 border      backgr. text    indicator   child_border
-client.focused          $focus      $winbg  $fg     $alert      $focus
-client.focused_inactive $nofocus    $winbg  $bg     $nofocus    $nofocus
-client.unfocused        $nofocus    $winbg  $bg     $nofocus    $nofocus
-client.urgent           $alert      $winbg  $bg     $alert      $alert
+client.focused          $fg         $bg     $bg     $alert      $fg
+client.unfocused        $bg         $bg     $fg     $bg         $bg
+client.urgent           $alert      $bg     $bg     $alert      $alert
 
 bar {
         position        top
         status_command  i3blocks
         tray_output     primary
+        separator_symbol "/"
 
         wheel_up_cmd nop
         wheel_down_cmd nop
@@ -189,8 +185,8 @@ bar {
 
                 # Workspace Indicators
                 # Name                  Border  Background Text
-                focused_workspace       $bg     $bg        $focus
-                active_workspace        $focus  $bg        $fg
+                focused_workspace       $fg     $fg        $bg
+                active_workspace        $fg     $bg        $fg
                 inactive_workspace      $bg     $bg        $fg
                 urgent_workspace        $alert  $alert     $bg
         }
@@ -205,4 +201,5 @@ $exe compton -CGb --backend glx --vsync opengl
 $exe redshift-gtk &> /dev/null &
 $exe light-locker &
 
-$exe_always feh --randomize --bg-scale ~/Pictures/unixporn
+$exe_always wal -i $HOME/Pictures/unixporn/
+
