@@ -94,7 +94,7 @@ $bmod+space focus mode_toggle
 
 $bmod+Shift+c reload
 $bmod+Shift+r restart
-$bmod+Shift+e exec "i3-nagbar -t warning -m 'Confirm logout' -b 'exit i3' 'i3-msg exit'"
+$bmod+Shift+e exec $HOME/dotfiles/scripts/logout.sh
 
 # ------------------------------------------------------------
 # -------------------------workspaces-------------------------
