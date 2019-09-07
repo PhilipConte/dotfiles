@@ -142,7 +142,7 @@ $bmod+Shift+0 move container to workspace $ws10
 # -----------------------look and feel------------------------
 # ------------------------------------------------------------
 
-font pango:SFMono,FontAwesome5Free Solid 10
+font pango:monospace,FontAwesome5Free Solid 10
 
 for_window [class="^.*"] border pixel 1
 hide_edge_borders smart
