@@ -1,0 +1,102 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'airblade/vim-gitgutter'
+Plug 'lambdalisue/vim-manpager'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'Yggdroot/indentLine'
+
+Plug 'rust-lang/rust.vim'
+call plug#end()
+
+command! PU PlugUpdate | PlugUpgrade
+
+" augroups
+augroup plaintext
+    autocmd!
+        autocmd FileType text,markdown setlocal ts=2 sts=2 sw=2 expandtab textwidth=60
+augroup END
+
+augroup webdev
+    autocmd!
+        autocmd FileType less,css,html,js?,ts? setlocal ts=2 sts=2 sw=2 expandtab
+        autocmd FileType less,css,html nnoremap <Leader>s viB:sort<cr>
+augroup END
+
+augroup rustprograms
+    autocmd!
+        autocmd FileType rs setlocal ts=4 sts=4 sw=4 expandtab
+augroup END
+
+augroup highlight_follows_vim
+    autocmd!
+        autocmd FocusGained * set cursorline
+        autocmd FocusLost * set nocursorline
+augroup END
+
+augroup restorecursor
+    autocmd BufReadPost *
+                \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                \   execute "normal! g`\"" |
+                \ endif
+augroup END
+
+augroup nerdtree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup END
+
+" general
+set nobackup
+set nowritebackup
+set noswapfile " get rid of swapfiles everywhere
+set dir=/tmp
+
+syntax on
+set number
+
+set mouse=a
+set conceallevel=0
+set cursorline
+
+set list
+filetype off
+filetype plugin indent on
+set laststatus=2
+set nowrap
+set noshowmode
+set listchars=tab:┊\ ,nbsp:␣,trail:·,extends:>,precedes:<
+set fillchars=vert:\│
+set ignorecase
+set smartcase
+set sidescroll=40
+set incsearch
+set hlsearch
+set undofile
+set undodir=~/tmp
+set path+=**
+set backspace=indent,eol,start
+set hidden
+set wildmenu
+set foldmethod=manual
+set complete=.,w,b,i,u,t,
+
+set shiftwidth=4
+set expandtab
+set tabstop=4
+set softtabstop=4
+
+" plugins
+
+" nerdtree
+map <silent> <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+" indentline
+let g:indentLine_char      = '┆'
+

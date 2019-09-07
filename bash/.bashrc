@@ -8,6 +8,7 @@ cat ~/.cache/wal/sequences
 PS1='\u@\h \W \$ '
 export EDITOR='vim'
 export VISUAL='vim'
+export MANPAGER='vim -c MANPAGER -'
 
 alias ls='ls --color=auto'
 alias la='ls -a'
