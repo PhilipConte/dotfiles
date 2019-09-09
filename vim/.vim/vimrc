@@ -62,7 +62,6 @@ set number
 
 set mouse=a
 set conceallevel=0
-set cursorline
 
 set list
 filetype off
