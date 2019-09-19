@@ -3,6 +3,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+[[ -f ~/.bash_override ]] && source ~/.bash_override
+
 cat ~/.cache/wal/sequences
 
 PS1='\u@\h \W \$ '
