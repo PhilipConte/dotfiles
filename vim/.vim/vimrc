@@ -12,6 +12,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
@@ -68,7 +70,7 @@ filetype off
 filetype plugin indent on
 set laststatus=2
 set nowrap
-set noshowmode
+"set noshowmode
 set listchars=tab:┊\ ,nbsp:␣,trail:·,extends:>,precedes:<
 set fillchars=vert:\│
 set ignorecase
