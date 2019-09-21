@@ -5,7 +5,7 @@
 
 [[ -f ~/.bash_override ]] && source ~/.bash_override
 
-cat ~/.cache/wal/sequences
+[[ -f ~/.cache/wal/sequences ]] && cat ~/.cache/wal/sequences
 
 PS1='\u@\h \W \$ '
 export EDITOR='vim'
