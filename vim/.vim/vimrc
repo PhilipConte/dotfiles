@@ -6,6 +6,7 @@ endif
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 Plug 'lambdalisue/vim-manpager'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-sensible'
@@ -70,7 +71,7 @@ filetype off
 filetype plugin indent on
 set laststatus=2
 set nowrap
-"set noshowmode
+set noshowmode
 set listchars=tab:┊\ ,nbsp:␣,trail:·,extends:>,precedes:<
 set fillchars=vert:\│
 set ignorecase
