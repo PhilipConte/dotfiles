@@ -196,7 +196,7 @@ bar {
 # ------------------------------------------------------------
 
 $exe $(find /usr -name "polkit-gnome-authentication-agent-1" 2>/dev/null) &
-$exe compton -CGb --backend glx --vsync opengl
+$exe compton --backend glx --xrender-sync-fence --vsync -b --config /dev/null
 $exe redshift-gtk &> /dev/null &
 $exe light-locker &
 
