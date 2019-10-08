@@ -102,3 +102,15 @@ let NERDTreeShowHidden=1
 " indentline
 let g:indentLine_char      = '┆'
 
+" lightline
+let g:lightline = {
+      \ 'component': {
+      \   'lineinfo': "%{line('.') . ':' . col('.') . '|' . line('$')}",
+      \ },
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'linenumber' ],
+      \              [ 'filetype' ] ]
+      \ },
+      \ }
+
