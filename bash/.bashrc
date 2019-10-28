@@ -8,6 +8,8 @@
 [[ -f ~/.cache/wal/sequences ]] && cat ~/.cache/wal/sequences
 
 PS1='\u@\h \W \$ '
+[[ -f ~/.prompt ]] && source ~/.prompt
+
 export EDITOR='vim'
 export VISUAL='vim'
 export MANPAGER='vim -c MANPAGER -'
