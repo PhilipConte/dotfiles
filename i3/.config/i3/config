@@ -24,7 +24,7 @@ $bmod+Return exec alacritty
 $bmod+c exec firefox
 
 $balt+space exec rofi -show drun -theme android_notification
-$balt+l exec light-locker-command -l
+$balt+l exec dm-tool lock
 
 bindsym XF86AudioRaiseVolume $exe pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume $exe pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+1 i3blocks
@@ -198,7 +198,6 @@ bar {
 $exe $(find /usr -name "polkit-gnome-authentication-agent-1" 2>/dev/null) &
 $exe compton --backend glx --xrender-sync-fence --vsync -b --config /dev/null
 $exe redshift-gtk &> /dev/null &
-$exe light-locker &
 
-$exe_always wal -i $HOME/Pictures/unixporn/
+$exe_always wal -i $HOME/Pictures/unixporn/ -o "$HOME/dotfiles/scripts/lock_wal.sh"
 
