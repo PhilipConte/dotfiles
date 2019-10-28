@@ -105,11 +105,12 @@ let g:indentLine_char      = '┆'
 " lightline
 let g:lightline = {
       \ 'component': {
-      \   'lineinfo': "%{line('.') . ':' . col('.') . '|' . line('$')}",
+      \   'lineinfo': "%{line('.') . ':' . line('$')}",
+      \   'colinfo': "%{col('.') . ':' . col('$')}",
       \ },
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
-      \              [ 'linenumber' ],
+      \              [ 'colinfo' ],
       \              [ 'filetype' ] ]
       \ },
       \ }
