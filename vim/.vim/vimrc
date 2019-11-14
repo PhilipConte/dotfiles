@@ -10,6 +10,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'lambdalisue/vim-manpager'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 
