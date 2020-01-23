@@ -59,13 +59,13 @@ $bmod+m split v
 # resize  (can also use mouse)
 $bmod+r mode "resize"
 mode "resize" {
-        bindsym $left resize shrink width 10 px or 10 ppt
-        bindsym $down resize grow height 10 px or 10 ppt
-        bindsym $up resize shrink height 10 px or 10 ppt
-        bindsym $right resize grow width 10 px or 10 ppt
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # toggle tiling / floating
@@ -161,7 +161,7 @@ mode "$mode_gaps" {
 }
 
 set_from_resource   $bg     i3wm.background #161616
-set_from_resource   $fg     i3wm.color14  #fdf6e3
+set_from_resource   $fg     i3wm.color14    #fdf6e3
 set_from_resource   $alert  i3wm.color3     #bd2c40
 
 # Window Borders
@@ -171,24 +171,24 @@ client.unfocused        $bg         $bg     $fg     $bg         $bg
 client.urgent           $alert      $bg     $bg     $alert      $alert
 
 bar {
-        position        top
-        status_command  i3blocks
-        separator_symbol "/"
+    position         top
+    status_command   i3blocks
+    separator_symbol "/"
 
-        wheel_up_cmd nop
-        wheel_down_cmd nop
+    wheel_up_cmd     nop
+    wheel_down_cmd   nop
 
-        colors {
-                background $bg
-                statusline $fg
+    colors {
+        background $bg
+        statusline $fg
 
-                # Workspace Indicators
-                # Name                  Border  Background Text
-                focused_workspace       $fg     $fg        $bg
-                active_workspace        $fg     $bg        $fg
-                inactive_workspace      $bg     $bg        $fg
-                urgent_workspace        $alert  $alert     $bg
-        }
+        # Workspace Indicators
+        # Name                  Border  Background Text
+        focused_workspace       $fg     $fg        $bg
+        active_workspace        $fg     $bg        $fg
+        inactive_workspace      $bg     $bg        $fg
+        urgent_workspace        $alert  $alert     $bg
+    }
 }
 
 # ------------------------------------------------------------
