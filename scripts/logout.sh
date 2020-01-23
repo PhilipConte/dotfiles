@@ -3,7 +3,7 @@
 another=$(echo "LOGOUT
 SUSPEND
 REBOOT
-POWEROFF" | awk '{print $(NF-1)}' | rofi -theme android_notification -dmenu -l 4 -i -p "SYSTEM")
+POWEROFF" | awk '{print $(NF-1)}' | rofi -theme ~/.cache/wal/rofi -dmenu -l 4 -i -p "SYSTEM")
 
 if [ "$another" == "LOGOUT" ] ; then
 	i3-msg exit

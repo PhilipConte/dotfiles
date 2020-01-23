@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wal "$@"
+xsetroot -solid `< ~/.cache/wal/colors.json jq -r '.special.background'`
+
