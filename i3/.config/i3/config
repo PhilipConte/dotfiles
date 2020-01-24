@@ -94,7 +94,7 @@ $bmod+space focus mode_toggle
 
 $bmod+Shift+c reload
 $bmod+Shift+r restart
-$bmod+Shift+e exec $HOME/dotfiles/scripts/logout.sh
+$bmod+Shift+e exec logout.sh
 
 # ------------------------------------------------------------
 # -------------------------workspaces-------------------------
@@ -195,8 +195,8 @@ bar {
 # ------------------------------------------------------------
 
 $exe $(find /usr -name "polkit-gnome-authentication-agent-1" 2>/dev/null) &
-$exe compton --backend glx --xrender-sync-fence --vsync -b --config /dev/null
+#$exe compton --backend glx --xrender-sync-fence --vsync -b --config /dev/null
 $exe redshift-gtk &> /dev/null &
 
-#$exe_always xsetroot -solid `< ~/.cache/wal/colors.json jq -r '.special.background'`
+$exe wal-col -f ashes
 
