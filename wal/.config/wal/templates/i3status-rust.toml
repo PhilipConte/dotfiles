@@ -10,6 +10,9 @@ idle_bg = "{background}"
 idle_fg = "{foreground}"
 info_bg = "{background}"
 info_fg = "{foreground}"
+good_bg = "{background}"
+warning_bg = "{background}"
+critical_bg = "{background}"
 
 [[block]]
 block = "sound"
@@ -19,6 +22,23 @@ block = "music"
 buttons = ["play", "next"]
 marquee = false
 max_width = 25
+
+[[block]]
+block = "net"
+device = "wlan0"
+ssid = true
+signal_strength = true
+hide_inactive = true
+hide_missing = true
+speed_up = false
+speed_down = false
+interval = 60
+
+[[block]]
+block = "battery"
+driver = "upower"
+device= "DisplayDevice"
+format = "{{percentage}}%"
 
 [[block]]
 block = "time"
