@@ -172,7 +172,7 @@ client.urgent           $alert      $bg     $bg     $alert      $alert
 
 bar {
     position         top
-    status_command   ~/Documents/code/i3status-rust/target/release/i3status-rs ~/.cache/wal/i3status-rust.toml
+    status_command   i3status-rs ~/.cache/wal/i3status-rust.toml
 
     wheel_up_cmd     nop
     wheel_down_cmd   nop
