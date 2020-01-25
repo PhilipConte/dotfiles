@@ -94,7 +94,7 @@ $bmod+space focus mode_toggle
 
 $bmod+Shift+c reload
 $bmod+Shift+r restart
-$bmod+Shift+e exec logout.sh
+$bmod+Shift+e exec ~/dotfiles/scripts/bin/logout.sh
 
 # ------------------------------------------------------------
 # -------------------------workspaces-------------------------
