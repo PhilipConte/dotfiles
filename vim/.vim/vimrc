@@ -6,6 +6,7 @@ endif
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
+Plug 'dylanaraps/wal.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'lambdalisue/vim-manpager'
 Plug 'scrooloose/nerdtree'
@@ -18,6 +19,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'rust-lang/rust.vim'
 call plug#end()
+
+colorscheme wal
 
 command! PU PlugUpdate | PlugUpgrade
 
