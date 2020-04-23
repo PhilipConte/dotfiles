@@ -1,0 +1,28 @@
+### song format
+song_list_format = %t $R%a
+
+current_item_prefix = " $b"
+current_item_suffix = $/b
+
+now_playing_prefix = $u
+now_playing_suffix = $/u
+
+browser_playlist_prefix = ""
+
+selected_item_prefix = $r
+selected_item_suffix = $/r
+
+### columns settings
+song_columns_list_format = (20)[]{a} (50)[]{t} (20)[]{b} (7f)[]{lr}
+
+### various settings
+playlist_display_mode = classic
+browser_display_mode = columns
+
+progressbar_look = "─╼·"
+header_visibility = no
+statusbar_visibility = no
+
+### colors
+colors_enabled = no
+
