@@ -25,4 +25,5 @@ alias ys='yay -Ss'
 alias owndir='sudo chown -R $USER:$USER'
 alias dc='docker-compose'
 alias toclipboard='xclip -sel c < '
+alias fromclipboard='xclip -sel c -o >'
 
