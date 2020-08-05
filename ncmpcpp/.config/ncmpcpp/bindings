@@ -8,6 +8,9 @@ def_key "h"
 def_key "l"
     next_column
 
+def_key "d"
+    delete_playlist_items
+
 def_key "n"
     next_found_item
 def_key "N"
