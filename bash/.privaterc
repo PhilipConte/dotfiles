@@ -1,4 +1,5 @@
 export PRIVATERC_RUN=yes
 
 PATH=~/.cargo/bin:~/bin:$PATH
+MOZ_X11_EGL=1
 
